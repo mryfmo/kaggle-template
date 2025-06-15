@@ -1,5 +1,8 @@
 import logging
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import fire
 import rootutils
@@ -15,7 +18,7 @@ INPUT_DIR = DATA_DIR / "input"
 OUTPUT_DIR = DATA_DIR / "output"
 INPUT_DIR.mkdir(exist_ok=True, parents=True)
 
-KAGGLE_USERNAME = os.getenv("KAGGLE_USERNAME")
+KAGGLE_USERNAME = os.environ["KAGGLE_USERNAME"]
 KAGGLE_COMPETITION_NAME = os.getenv(
     "KAGGLE_COMPETITION_NAME", "{{ cookiecutter.competition_name }}"
 )
