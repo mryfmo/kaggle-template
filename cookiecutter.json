@@ -4,5 +4,6 @@
   "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '-')|replace('_', '-')|replace('.', '-')|trim() }}",
   "project_description": "kaggle competition: {{ cookiecutter.competition_name }}",
   "kaggle_username": "your kaggle username",
+  "kaggle_key": "your kaggle key",
   "python_version": "3.12"
 }
