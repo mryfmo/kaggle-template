@@ -1,5 +1,8 @@
 import logging
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import fire
 import rootutils
@@ -13,10 +16,8 @@ logger.setLevel(logging.INFO)
 ROOT_DIR = rootutils.setup_root(".", indicator="pyproject.toml", cwd=True, dotenv=True)
 logger.info(f"ROOT_DIR: {ROOT_DIR}")
 
-KAGGLE_USERNAME = os.getenv("KAGGLE_USERNAME")
-KAGGLE_COMPETITION_NAME = os.getenv(
-    "KAGGLE_COMPETITION_NAME", "{{ cookiecutter.competition_name }}"
-)
+KAGGLE_USERNAME = os.environ["KAGGLE_USERNAME"]
+KAGGLE_COMPETITION_NAME = os.environ["KAGGLE_COMPETITION_NAME"]
 
 assert KAGGLE_USERNAME, "KAGGLE_USERNAME is not set."
 
