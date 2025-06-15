@@ -1,13 +1,16 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 EXP_NAME = "001"
 
 
 # ---------- # DIRECTORIES # ---------- #
-IS_KAGGLE_ENV = os.getenv("KAGGLE_DATA_PROXY_TOKEN") is not None
+IS_KAGGLE_ENV = os.environ["KAGGLE_DATA_PROXY_TOKEN"] is not None
 KAGGLE_COMPETITION_NAME = os.getenv("KAGGLE_COMPETITION_NAME", "equity-post-HCT-survival-predictions")
-KAGGLE_USERNAME = os.getenv("KAGGLE_USERNAME", "mst8823")
+KAGGLE_USERNAME = os.environ["KAGGLE_USERNAME"]
 
 if not IS_KAGGLE_ENV:
     import rootutils
